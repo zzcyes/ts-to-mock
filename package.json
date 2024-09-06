@@ -1,0 +1,21 @@
+{
+  "name": "ts-to-mock",
+  "keywords": [
+    "ts",
+    "mock",
+    "typescript",
+    "mockjs",
+    "mock-data",
+    "mock-server",
+    "mock-api"
+  ],
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "install-all": "pnpm install -r",
+    "dev": "pnpm -r run dev",
+    "build": "pnpm -r run build",
+    "test": "pnpm -r run test",
+    "preinstall": "npx only-allow pnpm"
+  }
+}
