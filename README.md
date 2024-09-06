@@ -4,15 +4,7 @@ ts-to-mock 是一个 TypeScript 接口解析项目，用于生成 Mock 数据和
 
 ## 演示
 
-![demo1](./assets/demo1.png)
-
-![demo2](./assets/demo2.png)
-
-![demo3](./assets/demo3.png)
-
-![demo4](./assets/demo4.png)
-
-![demo5](./assets/demo5.png)
+![demo](./assets/demo.gif)
 
 ## 功能
 
