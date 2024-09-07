@@ -5,11 +5,11 @@ export default defineConfig({
   plugins: [react()],
   base: "/projects/ts-to-mock/", // 添加这一行
   server: {
-    port: 3000, // 或其他可用端口
+    port: 3001, // 或其他可用端口
     host: true,
     proxy: {
       "/api": {
-        target: "http://localhost:3001",
+        target: "http://localhost:3002",
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ""),
       },
