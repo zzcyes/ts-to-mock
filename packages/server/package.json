@@ -4,7 +4,13 @@
     "description": "TypeScript接口解析项目",
     "scripts": {
         "dev": "nodemon",
-        "test": "vitest"
+        "test": "vitest",
+        "start": "node src/app.js",
+        "start:pm2": "pm2 start src/app.js --name ts-to-mock-server",
+        "start:pm2:4000": "PORT=4000 pm2 start src/app.js --name ts-to-mock-server",
+        "stop:pm2": "pm2 stop ts-to-mock-server",
+        "restart:pm2": "pm2 restart ts-to-mock-server",
+        "delete:pm2": "pm2 delete ts-to-mock-server"
     },
     "keywords": [],
     "author": "",
