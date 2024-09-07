@@ -157,13 +157,13 @@ function App() {
       if (file) {
         const formData = new FormData();
         formData.append("file", file);
-        const response = await fetch("/api/createMockByFile", {
+        const response = await fetch("/zzcxyz-ts-to-mock/createMockByFile", {
           method: "POST",
           body: formData,
         });
         data = await response.json();
       } else {
-        const response = await fetch("/api/createMock", {
+        const response = await fetch("/zzcxyz-ts-to-mock/createMock", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -187,7 +187,7 @@ function App() {
     clearMockResult();
     setActivePlugins([codePlugin]); // 只使用 codePlugin
     try {
-      const response = await fetch("/api/createMockFunction", {
+      const response = await fetch("/zzcxyz-ts-to-mock/createMockFunction", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -207,7 +207,7 @@ function App() {
 
   const testServerConnection = useCallback(async () => {
     try {
-      const response = await fetch("/api/health", {
+      const response = await fetch("/zzcxyz-ts-to-mock/health", {
         method: "GET",
       });
       if (response.ok) {
