@@ -1,7 +1,7 @@
 import React, { useMemo, useState, useRef, useCallback } from "react";
 import Editor from "@monaco-editor/react";
 import TabView from "./components/TabView";
-import { pluginSuite } from "./plugins/pluginSuite";
+import { pluginSuite } from "./plugins/PluginSuite";
 import {
   codePlugin,
   jsonCodePlugin,
@@ -354,7 +354,10 @@ function App() {
               >
                 生成 Mock 函数
               </CreateMockFunctionButton>
-              <TestServerButton onClick={testServerConnection}>
+              <TestServerButton
+                onClick={testServerConnection}
+                isDisabled={false}
+              >
                 测试服务器
               </TestServerButton>
             </ButtonGroup>

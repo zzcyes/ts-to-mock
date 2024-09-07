@@ -264,7 +264,7 @@ export const CreateMockFunctionButton = styled(StyledButton)`
   }
 `;
 
-export const TestServerButton = styled(StyledButton)`
+export const TestServerButton = styled(StyledButton)<{ isDisabled?: boolean }>`
   background-color: ${({ isDisabled }) => (isDisabled ? "#FDE68A" : "#F59E0B")};
   color: ${({ isDisabled }) => (isDisabled ? "#92400E" : "white")};
   &:hover {
