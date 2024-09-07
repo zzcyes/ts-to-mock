@@ -8,9 +8,8 @@ import {
   treePlugin,
   jsonPlugin,
 } from "./plugins/basePlugins";
-import { FaFileUpload } from "react-icons/fa"; // 导入文件上传图标
-import { FaFile } from "react-icons/fa"; // 导入文件图标
-import { FaTimes } from "react-icons/fa"; // 导入叉叉图标
+import { FaFileUpload, FaFile, FaTimes } from "react-icons/fa";
+import { PROXY_API_PREFIX } from "./config";
 import styled from "@emotion/styled";
 import {
   AppContainer,
@@ -157,13 +156,13 @@ function App() {
       if (file) {
         const formData = new FormData();
         formData.append("file", file);
-        const response = await fetch("/zzcxyz-ts-to-mock/createMockByFile", {
+        const response = await fetch(`${PROXY_API_PREFIX}/createMockByFile`, {
           method: "POST",
           body: formData,
         });
         data = await response.json();
       } else {
-        const response = await fetch("/zzcxyz-ts-to-mock/createMock", {
+        const response = await fetch(`${PROXY_API_PREFIX}/createMock`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -187,7 +186,7 @@ function App() {
     clearMockResult();
     setActivePlugins([codePlugin]); // 只使用 codePlugin
     try {
-      const response = await fetch("/zzcxyz-ts-to-mock/createMockFunction", {
+      const response = await fetch(`${PROXY_API_PREFIX}/createMockFunction`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -207,7 +206,7 @@ function App() {
 
   const testServerConnection = useCallback(async () => {
     try {
-      const response = await fetch("/zzcxyz-ts-to-mock/health", {
+      const response = await fetch(`${PROXY_API_PREFIX}/health`, {
         method: "GET",
       });
       if (response.ok) {
